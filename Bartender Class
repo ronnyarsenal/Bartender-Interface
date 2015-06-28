@@ -1,0 +1,59 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;                     // preprocessors
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication5
+{
+
+    class Bartender : IServer  // implements IServer interface
+    {
+
+
+        public void ServerDrink()
+        {
+            int drinks = 0;    // -------------------------------
+            string input = ""; // initializing all the variables
+            int Limit = -1;    // -------------------------------
+
+            Console.WriteLine("What is your limit of drinks?");
+            String Limitt = Console.ReadLine();
+            Limit = Convert.ToInt32(Limitt);
+            do
+            {
+                Console.WriteLine("Would you like a drink?: ");
+                input = Console.ReadLine(); //prompts imput for yes or other
+                String Input = input.ToLower();
+                if (Input == "yes")
+                {
+                    Console.WriteLine("What drink would you like");
+                    string drinkname = Console.ReadLine();
+                    Drink MyDrink = new Drink(); // new drink
+                    Console.WriteLine("Here's your " + drinkname);
+                    drinks++;
+                }
+                else
+                {
+                    Console.WriteLine("Okay");
+                    Console.WriteLine("Would you like to send a drink ");// prompt for reciever
+                    input = Console.ReadLine();
+                    String Input2 = input.ToLower();
+                    if (Input2 == "yes")
+                    {
+                        Console.WriteLine("Who would you like to send the drink to "); // sends drink to desired person
+                        input = Console.ReadLine();
+                        Drink GiftDrink = new Drink();
+                        Console.WriteLine("Sending drink to " + input); // output to screen
+                    }
+                    else
+                    {
+                        Console.WriteLine("Okay");
+                    }
+
+                }
+                Console.ReadLine();// puases the screen 
+            } while (drinks < Limit); // sets limit to the amount of drinks that could be for yourself 
+        }
+    }
+}
