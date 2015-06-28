@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication5
+{
+    class Drink // class
+    {
+      public String name = "Drink"; //name of all objects in class
+
+      static public void Fizzle()
+      {
+          Console.WriteLine("fizzle");
+      }
+      
+
+
+
+    }
+}
